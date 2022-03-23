@@ -9,12 +9,13 @@
 } 
 
 .styled-table {
-  border-collapse: collape;
+  border-collapse: collapse;
   margin: 25px 0;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   margin-left: auto;
   margin-right: auto;
+  margin-top: 25px;
 }
 
 .styled-table thead tr {
@@ -42,4 +43,35 @@
 
 p {
   text-align: center;
+}
+
+.user-info {
+  line-height: 1.5;
+  padding: 25px;
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-info button {
+  float: left;
+}
+
+.user-info p {
+  margin: 0;
+  float: right;
+}
+
+.user-input {
+  width: 50px;
+  float: right;
+}
+
+label {
+  float: left;
 }

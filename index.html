@@ -9,7 +9,22 @@
 </head>
 <body>
 
-    <h4 class="total">Total Runes: <span id="totalRunes">0</span></h4>
+    <!-- total inventory runes -->
+    <!-- <h4 class="total">Total Runes: <span id="totalRunes">0</span></h4> -->
+
+    <!-- test idea -->
+    <div class="user-info">
+        <label for="needed-runes">How many runes required to level up? </label>
+        <input type="text" id="needed-runes" class="user-input">
+        <br>
+        <br>
+        <label for="held-runes">How many runes are you currently carrying? </label>
+        <input type="text" id="held-runes" class="user-input">
+        <br>
+        <br>
+        <button id="can-i-level" onclick="canUserLevel()">Can I level up? </button>
+        <p id="level-y-n" style="color: black">Maybe</p>
+    </div>
 
     <table class="styled-table">
         <thead>

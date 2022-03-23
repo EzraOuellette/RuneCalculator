@@ -21,6 +21,10 @@ runes = [
     { inputId: "lordRune", name: "Lord's Rune", value: 50000, smallId: "lr" }
 ]
 
+// Test global variable to hold total runes in inventory
+
+let userTotalRunes = {};
+
 // Get information described in 'runes'
 
 function calculateRuneArray() {
@@ -43,7 +47,7 @@ function calculateRuneArray() {
     return myRuneArray;
 }
 
-// Calculate the total for each rune type as well as the sum of each
+// Calculate the total for each rune type as well as the sum of all combined
 
 function totalRuneAmount() {
     let myRuneArray = calculateRuneArray();
@@ -56,5 +60,23 @@ function totalRuneAmount() {
         sum += totalz;
         document.getElementById(runeInformation.newRuneEl).textContent = myTotal;
     }
-    document.getElementById("totalRunes").textContent = sum;
+    // document.getElementById("totalRunes").textContent = sum;
+    userTotalRunes = sum;
+}
+
+function canUserLevel() {
+    let userNeededRunes = parseInt(document.getElementById("needed-runes").value);
+    let userHeldRunes = parseInt(document.getElementById("held-runes").value);
+
+    let resultColor = document.getElementById("level-y-n").style;
+    
+    let userOverallRuneInventory = userTotalRunes + userHeldRunes;
+
+    if (userNeededRunes <= userOverallRuneInventory) {
+        document.getElementById("level-y-n").textContent = "YES";
+        resultColor.color = "#009879";
+    } else {
+        document.getElementById("level-y-n").textContent = "NO";
+        resultColor.color = "red";
+    }
 }
