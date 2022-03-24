@@ -60,8 +60,8 @@ function totalRuneAmount() {
         sum += totalz;
         document.getElementById(runeInformation.newRuneEl).textContent = myTotal;
     }
-    // document.getElementById("totalRunes").textContent = sum;
     userTotalRunes = sum;
+    canUserLevel();
 }
 
 function canUserLevel() {
@@ -71,6 +71,8 @@ function canUserLevel() {
     let resultColor = document.getElementById("level-y-n").style;
     
     let userOverallRuneInventory = userTotalRunes + userHeldRunes;
+
+    document.getElementById("totalRunes").textContent = userOverallRuneInventory;
 
     if (userNeededRunes <= userOverallRuneInventory) {
         document.getElementById("level-y-n").textContent = "YES";

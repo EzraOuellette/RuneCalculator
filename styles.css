@@ -16,6 +16,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
+  text-align: center;
 }
 
 .styled-table thead tr {
@@ -70,8 +71,17 @@ p {
 .user-input {
   width: 50px;
   float: right;
+  text-align: right;
 }
 
 label {
+  float: left;
+}
+
+#can-i-level {
+  float: left;
+}
+
+#overall-runes {
   float: left;
 }

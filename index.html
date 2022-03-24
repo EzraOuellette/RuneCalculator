@@ -19,10 +19,14 @@
         <br>
         <br>
         <label for="held-runes">How many runes are you currently carrying? </label>
-        <input type="text" id="held-runes" class="user-input">
+        <input type="text" id="held-runes" class="user-input" oninput="totalRuneAmount()">
         <br>
         <br>
-        <button id="can-i-level" onclick="canUserLevel()">Can I level up? </button>
+        <p id="overall-runes">Your total runes after using consumables: </p>
+        <p id="totalRunes" style="font-weight: bold;">0</p>
+        <br>
+        <br>
+        <p id="can-i-level">Can I level up? </p>
         <p id="level-y-n" style="color: black">Maybe</p>
     </div>
 
