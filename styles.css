@@ -85,3 +85,18 @@ label {
 #overall-runes {
   float: left;
 }
+
+#icon-header {
+  width: 1vh;
+}
+
+.icon {
+  width: 20%;
+  scale: 20;
+  float: right;
+}
+
+#rune-icon{
+  scale: 0.5;
+  float: right;
+}
