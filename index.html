@@ -14,23 +14,34 @@
 
     <!-- test idea -->
     <div class="user-info">
-        <label for="needed-runes">How many runes required to level up? </label>
-        <input type="text" id="needed-runes" class="user-input">
+        <label for="current-level">What level are you? </label>
+        <input type="text" id="current-level" class="user-input" oninput="totalRuneAmount()">
         <br>
         <br>
         <label for="held-runes">How many runes are you currently carrying? </label>
         <input type="text" id="held-runes" class="user-input" value="0" oninput="totalRuneAmount()">
         <br>
         <br>
-        <p id="overall-runes">Your total runes after using consumables: </p>
         <div>
-            <p id="totalRunes" style="font-weight: bold;">0</p>
-            <img id="rune-icon">
+            <label for="max-level">Max level: </label>
+            <p id="max-level"></p>
         </div>
         <br>
         <br>
-        <p id="can-i-level">Can I level up? </p>
-        <p id="level-y-n" style="color: black">Maybe</p>
+        <div>
+            <label for="runes-after-max">Runes left after max level:</label>
+            <p id="runes-after-max">0</p>
+            <img class="rune-icon">
+        </div>
+        <br>
+        <br>
+        <div>
+            <label for="needed-after-max">Runes needed for following level: </label>
+            <p id="needed-after-max">0</p>
+            <img class="rune-icon">
+        </div>
+        <br>
+        <br>
     </div>
 
     <table class="styled-table">
@@ -167,11 +178,13 @@
     </table>    
 </body>
 
+    <!-- <script type="application/json" src="data.js"></script>  -->
     <script src="app.js"></script>
 
     <script>
         document.body.onload = () => {
             console.log('page loaded')
+            console.log(data)
             loadIcons();
         }
     </script>

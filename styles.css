@@ -96,7 +96,12 @@ label {
   float: right;
 }
 
-#rune-icon{
+.rune-icon{
   scale: 0.5;
+  float: right;
+}
+
+#runes-after-max {
+  font-weight: bold;
   float: right;
 }

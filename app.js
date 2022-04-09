@@ -1,4 +1,5 @@
-    const runes = [
+const data = {
+    runes: [
         { inputId: "goldenRune01",      name: "Golden Rune [1]",        value: 200,         smallId: "gr01",        iconName: "golden-rune-01"     },
         { inputId: "goldenRune02",      name: "Golden Rune [2]",        value: 400,         smallId: "gr02",        iconName: "golden-rune-02"     },
         { inputId: "goldenRune03",      name: "Golden Rune [3]",        value: 800,         smallId: "gr03",        iconName: "golden-rune-03"     },
@@ -19,22 +20,527 @@
         { inputId: "heroRune04",        name: "Hero's Rune [4]",        value: 30000,       smallId: "hr04",        iconName: "hero-rune-04"       },
         { inputId: "heroRune05",        name: "Hero's Rune [5]",        value: 35000,       smallId: "hr05",        iconName: "hero-rune-05"       },
         { inputId: "lordRune",          name: "Lord's Rune",            value: 50000,       smallId: "lr",          iconName: "lord-rune"          },
+    ],
+
+    levels: [
+        { num: 1,       runes: 673,         increase: 0,          totalRunes: 0                 },    
+        { num: 2,       runes: 689,         increase: 16,         totalRunes: 1362              },    
+        { num: 3,       runes: 706,         increase: 17,         totalRunes: 2068              },    
+        { num: 4,       runes: 723,         increase: 17,         totalRunes: 2791              },    
+        { num: 5,       runes: 740,         increase: 17,         totalRunes: 3531              },    
+        { num: 6,       runes: 757,         increase: 17,         totalRunes: 4288              },    
+        { num: 7,       runes: 775,         increase: 18,         totalRunes: 5063              },    
+        { num: 8,       runes: 793,         increase: 18,         totalRunes: 5856              },    
+        { num: 9,       runes: 811,         increase: 18,         totalRunes: 6667              },    
+        { num: 10,      runes: 829,         increase: 18,         totalRunes: 7496              },    
+        { num: 11,      runes: 847,         increase: 18,         totalRunes: 8343              },    
+        { num: 12,      runes: 1038,        increase: 191,        totalRunes: 9381              },    
+        { num: 13,      runes: 1238,        increase: 200,        totalRunes: 10619             },   
+        { num: 14,      runes: 1445,        increase: 207,        totalRunes: 12064             },   
+        { num: 15,      runes: 1659,        increase: 214,        totalRunes: 13723             },   
+        { num: 16,      runes: 1882,        increase: 223,        totalRunes: 15605             },   
+        { num: 17,      runes: 2113,        increase: 231,        totalRunes: 17718             },   
+        { num: 18,      runes: 2353,        increase: 240,        totalRunes: 20071             },   
+        { num: 19,      runes: 2601,        increase: 248,        totalRunes: 22672             },   
+        { num: 20,      runes: 2857,        increase: 256,        totalRunes: 25529             },   
+        { num: 21,      runes: 3122,        increase: 265,        totalRunes: 28651             },   
+        { num: 22,      runes: 3395,        increase: 273,        totalRunes: 32046             },   
+        { num: 23,      runes: 3678,        increase: 283,        totalRunes: 35724             },   
+        { num: 24,      runes: 3969,        increase: 291,        totalRunes: 39693             },   
+        { num: 25,      runes: 4270,        increase: 301,        totalRunes: 43963             },   
+        { num: 26,      runes: 4580,        increase: 310,        totalRunes: 48543             },   
+        { num: 27,      runes: 4899,        increase: 319,        totalRunes: 53442             },   
+        { num: 28,      runes: 5228,        increase: 329,        totalRunes: 58670             },   
+        { num: 29,      runes: 5566,        increase: 338,        totalRunes: 64236             },   
+        { num: 30,      runes: 5915,        increase: 349,        totalRunes: 70151             },   
+        { num: 31,      runes: 6272,        increase: 357,        totalRunes: 76423             },   
+        { num: 32,      runes: 6640,        increase: 368,        totalRunes: 83063             },   
+        { num: 33,      runes: 7018,        increase: 378,        totalRunes: 90081             },   
+        { num: 34,      runes: 7407,        increase: 389,        totalRunes: 97488             },   
+        { num: 35,      runes: 7805,        increase: 398,        totalRunes: 105293            },
+        { num: 36,      runes: 8214,        increase: 409,        totalRunes: 113507            },
+        { num: 37,      runes: 8633,        increase: 419,        totalRunes: 122140            },
+        { num: 38,      runes: 9064,        increase: 431,        totalRunes: 131204            },
+        { num: 39,      runes: 9505,        increase: 441,        totalRunes: 140709            },
+        { num: 40,      runes: 9956,        increase: 451,        totalRunes: 150665            },
+        { num: 41,      runes: 10419,       increase: 463,        totalRunes: 161084            },
+        { num: 42,      runes: 10893,       increase: 474,        totalRunes: 171977            },
+        { num: 43,      runes: 11379,       increase: 486,        totalRunes: 183356            },
+        { num: 44,      runes: 11876,       increase: 497,        totalRunes: 195232            },
+        { num: 45,      runes: 12384,       increase: 508,        totalRunes: 207616            },
+        { num: 46,      runes: 12904,       increase: 520,        totalRunes: 220520            },
+        { num: 47,      runes: 13435,       increase: 531,        totalRunes: 233955            },
+        { num: 48,      runes: 13979,       increase: 544,        totalRunes: 247934            },
+        { num: 49,      runes: 14535,       increase: 556,        totalRunes: 262469            },
+        { num: 50,      runes: 15102,       increase: 567,        totalRunes: 277571            },
+        { num: 51,      runes: 15682,       increase: 580,        totalRunes: 293253            },
+        { num: 52,      runes: 16274,       increase: 592,        totalRunes: 309527            },
+        { num: 53,      runes: 16879,       increase: 605,        totalRunes: 326406            },
+        { num: 54,      runes: 17497,       increase: 618,        totalRunes: 343903            },
+        { num: 55,      runes: 18127,       increase: 630,        totalRunes: 362030            },
+        { num: 56,      runes: 18770,       increase: 643,        totalRunes: 380800            },
+        { num: 57,      runes: 19425,       increase: 655,        totalRunes: 400225            },
+        { num: 58,      runes: 20094,       increase: 669,        totalRunes: 420319            },
+        { num: 59,      runes: 20776,       increase: 682,        totalRunes: 441095            },
+        { num: 60,      runes: 21472,       increase: 696,        totalRunes: 462567            },
+        { num: 61,      runes: 22181,       increase: 709,        totalRunes: 484748            },
+        { num: 62,      runes: 22903,       increase: 722,        totalRunes: 507651            },
+        { num: 63,      runes: 23640,       increase: 737,        totalRunes: 531291            },
+        { num: 64,      runes: 24390,       increase: 750,        totalRunes: 555681            },
+        { num: 65,      runes: 25153,       increase: 763,        totalRunes: 580834            },
+        { num: 66,      runes: 25931,       increase: 778,        totalRunes: 606765            },
+        { num: 67,      runes: 26723,       increase: 792,        totalRunes: 633488            },
+        { num: 68,      runes: 27530,       increase: 807,        totalRunes: 661018            },
+        { num: 69,      runes: 28351,       increase: 821,        totalRunes: 689369            },
+        { num: 70,      runes: 29186,       increase: 835,        totalRunes: 718555            },
+        { num: 71,      runes: 30036,       increase: 850,        totalRunes: 748591            },
+        { num: 72,      runes: 30900,       increase: 864,        totalRunes: 779491            },
+        { num: 73,      runes: 31780,       increase: 880,        totalRunes: 811271            },
+        { num: 74,      runes: 32675,       increase: 895,        totalRunes: 843946            },
+        { num: 75,      runes: 33584,       increase: 909,        totalRunes: 877530            },
+        { num: 76,      runes: 34509,       increase: 925,        totalRunes: 912039            },
+        { num: 77,      runes: 35449,       increase: 940,        totalRunes: 947488            },
+        { num: 78,      runes: 36405,       increase: 956,        totalRunes: 983893            },
+        { num: 79,      runes: 37377,       increase: 972,        totalRunes: 1021270           },
+        { num: 80,      runes: 38364,       increase: 987,        totalRunes: 1059634           },
+        { num: 81,      runes: 39367,       increase: 1003,        totalRunes: 1099001          },
+        { num: 82,      runes: 40385,       increase: 1018,        totalRunes: 1139386          },
+        { num: 83,      runes: 41420,       increase: 1035,        totalRunes: 1180806          },
+        { num: 84,      runes: 42472,       increase: 1052,        totalRunes: 1223278          },
+        { num: 85,      runes: 43539,       increase: 1067,        totalRunes: 1266817          },
+        { num: 86,      runes: 44623,       increase: 1084,        totalRunes: 1311440          },
+        { num: 87,      runes: 45723,       increase: 1100,        totalRunes: 1357163          },
+        { num: 88,      runes: 46841,       increase: 1118,        totalRunes: 1404004          },
+        { num: 89,      runes: 47975,       increase: 1134,        totalRunes: 1451979          },
+        { num: 90,      runes: 49125,       increase: 1150,        totalRunes: 1501104          },
+        { num: 91,      runes: 50293,       increase: 1168,        totalRunes: 1551397          },
+        { num: 92,      runes: 51478,       increase: 1185,        totalRunes: 1602875          },
+        { num: 93,      runes: 52681,       increase: 1203,        totalRunes: 1655556          },
+        { num: 94,      runes: 53901,       increase: 1220,        totalRunes: 1709457          },
+        { num: 95,      runes: 55138,       increase: 1237,        totalRunes: 1764595          },
+        { num: 96,      runes: 56393,       increase: 1255,        totalRunes: 1820988          },
+        { num: 97,      runes: 57665,       increase: 1272,        totalRunes: 1878653          },
+        { num: 98,      runes: 58956,       increase: 1291,        totalRunes: 1937609          },
+        { num: 99,      runes: 60265,       increase: 1309,        totalRunes: 1997874          },
+        { num: 100,     runes: 61591,       increase: 1326,        totalRunes: 2059465          },
+        { num: 101,     runes: 62936,       increase: 1345,        totalRunes: 2122401          },
+        { num: 102,     runes: 64299,       increase: 1363,        totalRunes: 2186700          },
+        { num: 103,     runes: 65681,       increase: 1382,        totalRunes: 2252381          },
+        { num: 104,     runes: 67082,       increase: 1401,        totalRunes: 2319463          },
+        { num: 105,     runes: 68501,       increase: 1419,        totalRunes: 2387964          },
+        { num: 106,     runes: 69939,       increase: 1438,        totalRunes: 2457903          },
+        { num: 107,     runes: 71395,       increase: 1456,        totalRunes: 2529298          },
+        { num: 108,     runes: 72871,       increase: 1476,        totalRunes: 2602169          },
+        { num: 109,     runes: 74367,       increase: 1496,        totalRunes: 2676536          },
+        { num: 110,     runes: 75881,       increase: 1514,        totalRunes: 2752417          },
+        { num: 111,     runes: 77415,       increase: 1534,        totalRunes: 2829832          },
+        { num: 112,     runes: 78968,       increase: 1553,        totalRunes: 2908800          },
+        { num: 113,     runes: 80542,       increase: 1574,        totalRunes: 2989342          },
+        { num: 114,     runes: 82134,       increase: 1592,        totalRunes: 3071476          },
+        { num: 115,     runes: 83747,       increase: 1613,        totalRunes: 3155223          },
+        { num: 116,     runes: 85380,       increase: 1633,        totalRunes: 3240603          },
+        { num: 117,     runes: 87033,       increase: 1653,        totalRunes: 3327636          },
+        { num: 118,     runes: 88707,       increase: 1674,        totalRunes: 3416343          },
+        { num: 119,     runes: 90400,       increase: 1693,        totalRunes: 3506743          },
+        { num: 120,     runes: 92115,       increase: 1715,        totalRunes: 3598858          },
+        { num: 121,     runes: 93850,       increase: 1735,        totalRunes: 3692708          },
+        { num: 122,     runes: 95605,       increase: 1755,        totalRunes: 3788313          },
+        { num: 123,     runes: 97382,       increase: 1777,        totalRunes: 3885695          },
+        { num: 124,     runes: 99179,       increase: 1797,        totalRunes: 3984874          },
+        { num: 125,     runes: 100998,      increase: 1819,        totalRunes: 4085872          },
+        { num: 126,     runes: 102838,      increase: 1840,        totalRunes: 4188710          },
+        { num: 127,     runes: 104699,      increase: 1861,        totalRunes: 4293409          },
+        { num: 128,     runes: 106582,      increase: 1883,        totalRunes: 4399991          },
+        { num: 129,     runes: 108486,      increase: 1904,        totalRunes: 4508477          },
+        { num: 130,     runes: 110413,      increase: 1927,        totalRunes: 4618890          },
+        { num: 131,     runes: 112360,      increase: 1947,        totalRunes: 4731250          },
+        { num: 132,     runes: 114330,      increase: 1970,        totalRunes: 4845580          },
+        { num: 133,     runes: 116322,      increase: 1992,        totalRunes: 4961902          },
+        { num: 134,     runes: 118337,      increase: 2015,        totalRunes: 5080239          },
+        { num: 135,     runes: 120373,      increase: 2036,        totalRunes: 5200612          },
+        { num: 136,     runes: 122432,      increase: 2059,        totalRunes: 5323044          },
+        { num: 137,     runes: 124513,      increase: 2081,        totalRunes: 5447557          },
+        { num: 138,     runes: 126618,      increase: 2105,        totalRunes: 5574175          },
+        { num: 139,     runes: 128744,      increase: 2126,        totalRunes: 5702919          },
+        { num: 140,     runes: 130894,      increase: 2150,        totalRunes: 5833813          },
+        { num: 141,     runes: 133067,      increase: 2173,        totalRunes: 5966880          },
+        { num: 142,     runes: 135263,      increase: 2196,        totalRunes: 6102143          },
+        { num: 143,     runes: 137483,      increase: 2220,        totalRunes: 6239626          },
+        { num: 144,     runes: 139725,      increase: 2242,        totalRunes: 6379351          },
+        { num: 145,     runes: 141992,      increase: 2267,        totalRunes: 6521343          },
+        { num: 146,     runes: 144282,      increase: 2290,        totalRunes: 6665625          },
+        { num: 147,     runes: 146595,      increase: 2313,        totalRunes: 6812220          },
+        { num: 148,     runes: 148933,      increase: 2338,        totalRunes: 6961153          },
+        { num: 149,     runes: 151295,      increase: 2362,        totalRunes: 7112448          },
+        { num: 150,     runes: 153680,      increase: 2385,        totalRunes: 7266128          },
+        { num: 151,     runes: 156090,      increase: 2410,        totalRunes: 7422218          },
+        { num: 152,     runes: 158524,      increase: 2434,        totalRunes: 7580742          },
+        { num: 153,     runes: 160983,      increase: 2459,        totalRunes: 7741725          },
+        { num: 154,     runes: 163466,      increase: 2483,        totalRunes: 7905191          },
+        { num: 155,     runes: 165975,      increase: 2509,        totalRunes: 8071166          },
+        { num: 156,     runes: 168507,      increase: 2532,        totalRunes: 8239673          },
+        { num: 157,     runes: 171065,      increase: 2558,        totalRunes: 8410738          },
+        { num: 158,     runes: 173648,      increase: 2583,        totalRunes: 8584386          },
+        { num: 159,     runes: 176257,      increase: 2609,        totalRunes: 8760643          },
+        { num: 160,     runes: 178890,      increase: 2633,        totalRunes: 8939533          },
+        { num: 161,     runes: 181549,      increase: 2659,        totalRunes: 9121082          },
+        { num: 162,     runes: 184233,      increase: 2684,        totalRunes: 9305315          },
+        { num: 163,     runes: 186944,      increase: 2711,        totalRunes: 9492259          },
+        { num: 164,     runes: 189679,      increase: 2735,        totalRunes: 9681938          },
+        { num: 165,     runes: 192441,      increase: 2762,        totalRunes: 9874379          },
+        { num: 166,     runes: 195299,      increase: 2858,        totalRunes: 10069678         }, 
+        { num: 167,     runes: 198043,      increase: 2744,        totalRunes: 10267721         }, 
+        { num: 168,     runes: 200884,      increase: 2841,        totalRunes: 10468605         }, 
+        { num: 169,     runes: 203750,      increase: 2866,        totalRunes: 10672355         }, 
+        { num: 170,     runes: 206644,      increase: 2894,        totalRunes: 10878999         }, 
+        { num: 171,     runes: 209564,      increase: 2920,        totalRunes: 11088563         }, 
+        { num: 172,     runes: 212510,      increase: 2946,        totalRunes: 11301073         }, 
+        { num: 173,     runes: 215484,      increase: 2974,        totalRunes: 11516557         }, 
+        { num: 174,     runes: 218485,      increase: 3001,        totalRunes: 11735042         }, 
+        { num: 175,     runes: 221512,      increase: 3027,        totalRunes: 11956554         }, 
+        { num: 176,     runes: 224567,      increase: 3055,        totalRunes: 12181121         }, 
+        { num: 177,     runes: 227649,      increase: 3082,        totalRunes: 12408770         }, 
+        { num: 178,     runes: 230759,      increase: 3110,        totalRunes: 12639529         }, 
+        { num: 179,     runes: 233896,      increase: 3137,        totalRunes: 12873425         }, 
+        { num: 180,     runes: 237062,      increase: 3166,        totalRunes: 13110487         }, 
+        { num: 181,     runes: 240254,      increase: 3192,        totalRunes: 13350741         }, 
+        { num: 182,     runes: 243475,      increase: 3221,        totalRunes: 13594216         }, 
+        { num: 183,     runes: 246724,      increase: 3249,        totalRunes: 13840940         }, 
+        { num: 184,     runes: 250002,      increase: 3278,        totalRunes: 14090942         }, 
+        { num: 185,     runes: 253307,      increase: 3305,        totalRunes: 14344249         }, 
+        { num: 186,     runes: 256641,      increase: 3334,        totalRunes: 14600890         }, 
+        { num: 187,     runes: 260003,      increase: 3362,        totalRunes: 14860893         }, 
+        { num: 188,     runes: 263395,      increase: 3392,        totalRunes: 15124288         }, 
+        { num: 189,     runes: 266815,      increase: 3420,        totalRunes: 15391103         }, 
+        { num: 190,     runes: 270263,      increase: 3448,        totalRunes: 15661366         }, 
+        { num: 191,     runes: 273741,      increase: 3478,        totalRunes: 15935107         }, 
+        { num: 192,     runes: 277248,      increase: 3507,        totalRunes: 16212355         }, 
+        { num: 193,     runes: 280785,      increase: 3537,        totalRunes: 16493140         }, 
+        { num: 194,     runes: 284350,      increase: 3565,        totalRunes: 16777490         }, 
+        { num: 195,     runes: 287946,      increase: 3596,        totalRunes: 17065436         }, 
+        { num: 196,     runes: 291571,      increase: 3625,        totalRunes: 17357007         }, 
+        { num: 197,     runes: 295225,      increase: 3654,        totalRunes: 17652232         }, 
+        { num: 198,     runes: 298910,      increase: 3685,        totalRunes: 17951142         }, 
+        { num: 199,     runes: 302625,      increase: 3715,        totalRunes: 18253767         }, 
+        { num: 200,     runes: 306369,      increase: 3744,        totalRunes: 18560136         }, 
+        { num: 201,     runes: 310144,      increase: 3775,        totalRunes: 18870280         }, 
+        { num: 202,     runes: 313949,      increase: 3805,        totalRunes: 19184229         }, 
+        { num: 203,     runes: 317785,      increase: 3836,        totalRunes: 19502014         }, 
+        { num: 204,     runes: 321651,      increase: 3866,        totalRunes: 19823665         }, 
+        { num: 205,     runes: 325549,      increase: 3898,        totalRunes: 20149214         }, 
+        { num: 206,     runes: 329476,      increase: 3927,        totalRunes: 20478690         }, 
+        { num: 207,     runes: 333435,      increase: 3959,        totalRunes: 20812125         }, 
+        { num: 208,     runes: 337425,      increase: 3990,        totalRunes: 21149550         }, 
+        { num: 209,     runes: 341447,      increase: 4022,        totalRunes: 21490997         }, 
+        { num: 210,     runes: 345499,      increase: 4052,        totalRunes: 21836496         }, 
+        { num: 211,     runes: 349583,      increase: 4084,        totalRunes: 22186079         }, 
+        { num: 212,     runes: 353698,      increase: 4115,        totalRunes: 22539777         }, 
+        { num: 213,     runes: 357846,      increase: 4148,        totalRunes: 22897623         }, 
+        { num: 214,     runes: 362025,      increase: 4179,        totalRunes: 23259648         }, 
+        { num: 215,     runes: 366235,      increase: 4210,        totalRunes: 23625883         }, 
+        { num: 216,     runes: 370478,      increase: 4243,        totalRunes: 23996361         }, 
+        { num: 217,     runes: 374753,      increase: 4275,        totalRunes: 24371114         }, 
+        { num: 218,     runes: 379061,      increase: 4308,        totalRunes: 24750175         }, 
+        { num: 219,     runes: 383400,      increase: 4339,        totalRunes: 25133575         }, 
+        { num: 220,     runes: 387773,      increase: 4373,        totalRunes: 25521348         }, 
+        { num: 221,     runes: 392178,      increase: 4405,        totalRunes: 25913526         }, 
+        { num: 222,     runes: 396615,      increase: 4437,        totalRunes: 26310141         }, 
+        { num: 223,     runes: 401086,      increase: 4471,        totalRunes: 26711227         }, 
+        { num: 224,     runes: 405589,      increase: 4503,        totalRunes: 27116816         }, 
+        { num: 225,     runes: 410126,      increase: 4537,        totalRunes: 27526942         }, 
+        { num: 226,     runes: 414696,      increase: 4570,        totalRunes: 27941638         }, 
+        { num: 227,     runes: 419299,      increase: 4603,        totalRunes: 28360937         }, 
+        { num: 228,     runes: 423936,      increase: 4637,        totalRunes: 28784873         }, 
+        { num: 229,     runes: 428607,      increase: 4671,        totalRunes: 29213480         }, 
+        { num: 230,     runes: 433311,      increase: 4704,        totalRunes: 29646791         }, 
+        { num: 231,     runes: 438049,      increase: 4738,        totalRunes: 30084840         }, 
+        { num: 232,     runes: 442820,      increase: 4771,        totalRunes: 30527660         }, 
+        { num: 233,     runes: 447626,      increase: 4806,        totalRunes: 30975286         }, 
+        { num: 234,     runes: 452467,      increase: 4841,        totalRunes: 31427753         }, 
+        { num: 235,     runes: 457341,      increase: 4874,        totalRunes: 31885094         }, 
+        { num: 236,     runes: 462250,      increase: 4909,        totalRunes: 32347344         }, 
+        { num: 237,     runes: 467193,      increase: 4943,        totalRunes: 32814537         }, 
+        { num: 238,     runes: 472172,      increase: 4979,        totalRunes: 33286709         }, 
+        { num: 239,     runes: 477185,      increase: 5013,        totalRunes: 33763894         }, 
+        { num: 240,     runes: 482232,      increase: 5047,        totalRunes: 34246126         }, 
+        { num: 241,     runes: 487315,      increase: 5083,        totalRunes: 34733441         }, 
+        { num: 242,     runes: 492433,      increase: 5118,        totalRunes: 35225874         }, 
+        { num: 243,     runes: 497587,      increase: 5154,        totalRunes: 35723461         }, 
+        { num: 244,     runes: 502775,      increase: 5188,        totalRunes: 36226236         }, 
+        { num: 245,     runes: 508000,      increase: 5225,        totalRunes: 36734236         }, 
+        { num: 246,     runes: 513206,      increase: 5206,        totalRunes: 37247442         }, 
+        { num: 247,     runes: 518555,      increase: 5349,        totalRunes: 37765997         }, 
+        { num: 248,     runes: 523887,      increase: 5332,        totalRunes: 38289884         }, 
+        { num: 249,     runes: 529254,      increase: 5367,        totalRunes: 38819138         }, 
+        { num: 250,     runes: 534658,      increase: 5404,        totalRunes: 39353796         }, 
+        { num: 251,     runes: 540098,      increase: 5440,        totalRunes: 39893894         }, 
+        { num: 252,     runes: 545574,      increase: 5476,        totalRunes: 40439468         }, 
+        { num: 253,     runes: 551087,      increase: 5513,        totalRunes: 40990555         }, 
+        { num: 254,     runes: 556636,      increase: 5549,        totalRunes: 41547191         }, 
+        { num: 255,     runes: 562223,      increase: 5587,        totalRunes: 42109414         }, 
+        { num: 256,     runes: 567846,      increase: 5623,        totalRunes: 42677260         }, 
+        { num: 257,     runes: 573505,      increase: 5659,        totalRunes: 43250765         }, 
+        { num: 258,     runes: 579202,      increase: 5697,        totalRunes: 43829967         }, 
+        { num: 259,     runes: 584937,      increase: 5735,        totalRunes: 44414904         }, 
+        { num: 260,     runes: 590708,      increase: 5771,        totalRunes: 45005612         }, 
+        { num: 261,     runes: 596517,      increase: 5809,        totalRunes: 45602129         }, 
+        { num: 262,     runes: 602363,      increase: 5846,        totalRunes: 46204492         }, 
+        { num: 263,     runes: 608248,      increase: 5885,        totalRunes: 46812740         }, 
+        { num: 264,     runes: 614170,      increase: 5922,        totalRunes: 47426910         }, 
+        { num: 265,     runes: 620129,      increase: 5959,        totalRunes: 48047039         }, 
+        { num: 266,     runes: 626127,      increase: 5998,        totalRunes: 48673166         }, 
+        { num: 267,     runes: 632163,      increase: 6036,        totalRunes: 49305329         }, 
+        { num: 268,     runes: 638238,      increase: 6075,        totalRunes: 49943567         }, 
+        { num: 269,     runes: 644351,      increase: 6113,        totalRunes: 50587918         }, 
+        { num: 270,     runes: 650502,      increase: 6151,        totalRunes: 51238420         }, 
+        { num: 271,     runes: 656692,      increase: 6190,        totalRunes: 51895112         }, 
+        { num: 272,     runes: 662920,      increase: 6228,        totalRunes: 52558032         }, 
+        { num: 273,     runes: 669188,      increase: 6268,        totalRunes: 53227220         }, 
+        { num: 274,     runes: 675494,      increase: 6306,        totalRunes: 53902714         }, 
+        { num: 275,     runes: 681840,      increase: 6346,        totalRunes: 54584554         }, 
+        { num: 276,     runes: 688225,      increase: 6385,        totalRunes: 55272779         }, 
+        { num: 277,     runes: 694649,      increase: 6424,        totalRunes: 55967428         }, 
+        { num: 278,     runes: 701113,      increase: 6464,        totalRunes: 56668541         }, 
+        { num: 279,     runes: 707616,      increase: 6503,        totalRunes: 57376157         }, 
+        { num: 280,     runes: 714160,      increase: 6544,        totalRunes: 58090317         }, 
+        { num: 281,     runes: 720743,      increase: 6583,        totalRunes: 58811060         }, 
+        { num: 282,     runes: 727365,      increase: 6622,        totalRunes: 59538425         }, 
+        { num: 283,     runes: 734028,      increase: 6663,        totalRunes: 60272453         }, 
+        { num: 284,     runes: 740732,      increase: 6704,        totalRunes: 61013185         }, 
+        { num: 285,     runes: 747475,      increase: 6743,        totalRunes: 61760660         }, 
+        { num: 286,     runes: 754259,      increase: 6784,        totalRunes: 62514919         }, 
+        { num: 287,     runes: 761083,      increase: 6824,        totalRunes: 63276002         }, 
+        { num: 288,     runes: 767949,      increase: 6866,        totalRunes: 64043951         }, 
+        { num: 289,     runes: 774855,      increase: 6906,        totalRunes: 64818806         }, 
+        { num: 290,     runes: 781801,      increase: 6946,        totalRunes: 65600607         }, 
+        { num: 291,     runes: 788789,      increase: 6988,        totalRunes: 66389396         }, 
+        { num: 292,     runes: 795818,      increase: 7029,        totalRunes: 67185214         }, 
+        { num: 293,     runes: 802889,      increase: 7071,        totalRunes: 67988103         }, 
+        { num: 294,     runes: 810000,      increase: 7111,        totalRunes: 68798103         }, 
+        { num: 295,     runes: 817154,      increase: 7154,        totalRunes: 69615257         }, 
+        { num: 296,     runes: 824349,      increase: 7195,        totalRunes: 70439606         }, 
+        { num: 297,     runes: 831585,      increase: 7236,        totalRunes: 71271191         }, 
+        { num: 298,     runes: 838864,      increase: 7279,        totalRunes: 72110055         }, 
+        { num: 299,     runes: 846184,      increase: 7320,        totalRunes: 72956239         }, 
+        { num: 300,     runes: 853547,      increase: 7363,        totalRunes: 73809786         }, 
+        { num: 301,     runes: 860952,      increase: 7405,        totalRunes: 74670738         }, 
+        { num: 302,     runes: 868399,      increase: 7447,        totalRunes: 75539137         }, 
+        { num: 303,     runes: 875889,      increase: 7490,        totalRunes: 76415026         }, 
+        { num: 304,     runes: 883421,      increase: 7532,        totalRunes: 77298447         }, 
+        { num: 305,     runes: 890997,      increase: 7576,        totalRunes: 78189444         }, 
+        { num: 306,     runes: 898615,      increase: 7618,        totalRunes: 79088059         }, 
+        { num: 307,     runes: 906275,      increase: 7660,        totalRunes: 79994334         }, 
+        { num: 308,     runes: 913979,      increase: 7704,        totalRunes: 80908313         }, 
+        { num: 309,     runes: 921727,      increase: 7748,        totalRunes: 81830040         }, 
+        { num: 310,     runes: 929517,      increase: 7790,        totalRunes: 82759557         }, 
+        { num: 311,     runes: 937351,      increase: 7834,        totalRunes: 83696908         }, 
+        { num: 312,     runes: 945228,      increase: 7877,        totalRunes: 84642136         }, 
+        { num: 313,     runes: 953150,      increase: 7922,        totalRunes: 85595286         }, 
+        { num: 314,     runes: 961115,      increase: 7965,        totalRunes: 86556401         }, 
+        { num: 315,     runes: 969123,      increase: 8008,        totalRunes: 87525524         }, 
+        { num: 316,     runes: 977176,      increase: 8053,        totalRunes: 88502700         }, 
+        { num: 317,     runes: 985273,      increase: 8097,        totalRunes: 89487973         }, 
+        { num: 318,     runes: 993415,      increase: 8142,        totalRunes: 90481388         }, 
+        { num: 319,     runes: 1001600,     increase: 8185,        totalRunes: 91482988         }, 
+        { num: 320,     runes: 1009831,     increase: 8231,        totalRunes: 92492819         }, 
+        { num: 321,     runes: 1018106,     increase: 8275,        totalRunes: 93510925         }, 
+        { num: 322,     runes: 1026425,     increase: 8319,        totalRunes: 94537350         }, 
+        { num: 323,     runes: 1034790,     increase: 8365,        totalRunes: 95572140         }, 
+        { num: 324,     runes: 1043199,     increase: 8409,        totalRunes: 96615339         }, 
+        { num: 325,     runes: 1051654,     increase: 8455,        totalRunes: 97666993         }, 
+        { num: 326,     runes: 1060154,     increase: 8500,        totalRunes: 98727147         }, 
+        { num: 327,     runes: 1068699,     increase: 8545,        totalRunes: 99795846         }, 
+        { num: 328,     runes: 1077290,     increase: 8591,        totalRunes: 100873136        },
+        { num: 329,     runes: 1085926,     increase: 8636,        totalRunes: 101959062        },
+        { num: 330,     runes: 1094609,     increase: 8683,        totalRunes: 103053671        },
+        { num: 331,     runes: 1103336,     increase: 8727,        totalRunes: 104157007        },
+        { num: 332,     runes: 1112110,     increase: 8774,        totalRunes: 105269117        },
+        { num: 333,     runes: 1120930,     increase: 8820,        totalRunes: 106390047        },
+        { num: 334,     runes: 1129797,     increase: 8867,        totalRunes: 107519844        },
+        { num: 335,     runes: 1138709,     increase: 8912,        totalRunes: 108658553        },
+        { num: 336,     runes: 1147668,     increase: 8959,        totalRunes: 109806221        },
+        { num: 337,     runes: 1156673,     increase: 9005,        totalRunes: 110962894        },
+        { num: 338,     runes: 1165726,     increase: 9053,        totalRunes: 112128620        },
+        { num: 339,     runes: 1174825,     increase: 9099,        totalRunes: 113303445        },
+        { num: 340,     runes: 1183970,     increase: 9145,        totalRunes: 114487415        },
+        { num: 341,     runes: 1193163,     increase: 9193,        totalRunes: 115680578        },
+        { num: 342,     runes: 1202403,     increase: 9240,        totalRunes: 116882981        },
+        { num: 343,     runes: 1211691,     increase: 9288,        totalRunes: 118094672        },
+        { num: 344,     runes: 1221026,     increase: 9335,        totalRunes: 119315698        },
+        { num: 345,     runes: 1230408,     increase: 9382,        totalRunes: 120546106        },
+        { num: 346,     runes: 1239838,     increase: 9430,        totalRunes: 121785944        },
+        { num: 347,     runes: 1249315,     increase: 9477,        totalRunes: 123035259        },
+        { num: 348,     runes: 1258841,     increase: 9526,        totalRunes: 124294100        },
+        { num: 349,     runes: 1268414,     increase: 9573,        totalRunes: 125562514        },
+        { num: 350,     runes: 1278036,     increase: 9622,        totalRunes: 126840550        },
+        { num: 351,     runes: 1287706,     increase: 9670,        totalRunes: 128128256        },
+        { num: 352,     runes: 1297424,     increase: 9718,        totalRunes: 129425680        },
+        { num: 353,     runes: 1307191,     increase: 9767,        totalRunes: 130732871        },
+        { num: 354,     runes: 1317006,     increase: 9815,        totalRunes: 132049877        },
+        { num: 355,     runes: 1326871,     increase: 9865,        totalRunes: 133376748        },
+        { num: 356,     runes: 1336783,     increase: 9912,        totalRunes: 134713531        },
+        { num: 357,     runes: 1346745,     increase: 9962,        totalRunes: 136060276        },
+        { num: 358,     runes: 1356756,     increase: 10011,       totalRunes: 137417032        },
+        { num: 359,     runes: 1366817,     increase: 10061,       totalRunes: 138783849        },
+        { num: 360,     runes: 1376926,     increase: 10109,       totalRunes: 140160775        },
+        { num: 361,     runes: 1387085,     increase: 10159,       totalRunes: 141547860        },
+        { num: 362,     runes: 1397293,     increase: 10208,       totalRunes: 142945153        },
+        { num: 363,     runes: 1407552,     increase: 10259,       totalRunes: 144352705        },
+        { num: 364,     runes: 1417860,     increase: 10308,       totalRunes: 145770565        },
+        { num: 365,     runes: 1428217,     increase: 10357,       totalRunes: 147198782        },
+        { num: 366,     runes: 1438625,     increase: 10408,       totalRunes: 148626999        },
+        { num: 367,     runes: 1449083,     increase: 10458,       totalRunes: 150076082        },
+        { num: 368,     runes: 1459592,     increase: 10509,       totalRunes: 151535674        },
+        { num: 369,     runes: 1470151,     increase: 10559,       totalRunes: 153005825        },
+        { num: 370,     runes: 1480760,     increase: 10609,       totalRunes: 154486585        },
+        { num: 371,     runes: 1491420,     increase: 10660,       totalRunes: 155978005        },
+        { num: 372,     runes: 1502130,     increase: 10710,       totalRunes: 157480135        },
+        { num: 373,     runes: 1512892,     increase: 10762,       totalRunes: 158993027        },
+        { num: 374,     runes: 1523704,     increase: 10812,       totalRunes: 160516731        },
+        { num: 375,     runes: 1534568,     increase: 10864,       totalRunes: 162051299        },
+        { num: 376,     runes: 1545483,     increase: 10915,       totalRunes: 163596782        },
+        { num: 377,     runes: 1556449,     increase: 10966,       totalRunes: 165153231        },
+        { num: 378,     runes: 1567467,     increase: 11018,       totalRunes: 166720698        },
+        { num: 379,     runes: 1578536,     increase: 11069,       totalRunes: 168299234        },
+        { num: 380,     runes: 1589658,     increase: 11122,       totalRunes: 169888892        },
+        { num: 381,     runes: 1600830,     increase: 11172,       totalRunes: 171489722        },
+        { num: 382,     runes: 1612055,     increase: 11225,       totalRunes: 173101777        },
+        { num: 383,     runes: 1623332,     increase: 11277,       totalRunes: 174725109        },
+        { num: 384,     runes: 1634662,     increase: 11330,       totalRunes: 176359771        },
+        { num: 385,     runes: 1646043,     increase: 11381,       totalRunes: 178005814        },
+        { num: 386,     runes: 1657477,     increase: 11434,       totalRunes: 179663291        },
+        { num: 387,     runes: 1668963,     increase: 11486,       totalRunes: 181332254        },
+        { num: 388,     runes: 1680503,     increase: 11540,       totalRunes: 183012757        },
+        { num: 389,     runes: 1692095,     increase: 11592,       totalRunes: 184704852        },
+        { num: 390,     runes: 1703739,     increase: 11644,       totalRunes: 186408591        },
+        { num: 391,     runes: 1715437,     increase: 11698,       totalRunes: 188124028        },
+        { num: 392,     runes: 1727188,     increase: 11751,       totalRunes: 189851216        },
+        { num: 393,     runes: 1738993,     increase: 11805,       totalRunes: 191590209        },
+        { num: 394,     runes: 1750851,     increase: 11858,       totalRunes: 193341060        },
+        { num: 395,     runes: 1762762,     increase: 11911,       totalRunes: 195103822        },
+        { num: 396,     runes: 1774727,     increase: 11965,       totalRunes: 196878549        },
+        { num: 397,     runes: 1786745,     increase: 12018,       totalRunes: 198665294        },
+        { num: 398,     runes: 1798818,     increase: 12073,       totalRunes: 200464112        },
+        { num: 399,     runes: 1810944,     increase: 12126,       totalRunes: 202275056        },
+        { num: 400,     runes: 1823125,     increase: 12181,       totalRunes: 204098181        },
+        { num: 401,     runes: 1835360,     increase: 12235,       totalRunes: 205933541        },
+        { num: 402,     runes: 1847649,     increase: 12289,       totalRunes: 207781190        },
+        { num: 403,     runes: 1859993,     increase: 12344,       totalRunes: 209641183        },
+        { num: 404,     runes: 1872391,     increase: 12398,       totalRunes: 211513574        },
+        { num: 405,     runes: 1884845,     increase: 12454,       totalRunes: 213398419        },
+        { num: 406,     runes: 1897352,     increase: 12507,       totalRunes: 215295771        },
+        { num: 407,     runes: 1909915,     increase: 12563,       totalRunes: 217205686        },
+        { num: 408,     runes: 1922533,     increase: 12618,       totalRunes: 219128219        },
+        { num: 409,     runes: 1935207,     increase: 12674,       totalRunes: 221063426        },
+        { num: 410,     runes: 1947935,     increase: 12728,       totalRunes: 223011361        },
+        { num: 411,     runes: 1960719,     increase: 12784,       totalRunes: 224972080        },
+        { num: 412,     runes: 1973558,     increase: 12839,       totalRunes: 226945638        },
+        { num: 413,     runes: 1986454,     increase: 12896,       totalRunes: 228932092        },
+        { num: 414,     runes: 1999405,     increase: 12951,       totalRunes: 230931497        },
+        { num: 415,     runes: 2012412,     increase: 13007,       totalRunes: 232943909        },
+        { num: 416,     runes: 2025474,     increase: 13062,       totalRunes: 234969383        },
+        { num: 417,     runes: 2038594,     increase: 13120,       totalRunes: 237007977        },
+        { num: 418,     runes: 2051769,     increase: 13175,       totalRunes: 239059746        },
+        { num: 419,     runes: 2065001,     increase: 13232,       totalRunes: 241124747        },
+        { num: 420,     runes: 2078289,     increase: 13288,       totalRunes: 243203036        },
+        { num: 421,     runes: 2091634,     increase: 13345,       totalRunes: 245294670        },
+        { num: 422,     runes: 2105036,     increase: 13402,       totalRunes: 247399706        },
+        { num: 423,     runes: 2118494,     increase: 13458,       totalRunes: 249518200        },
+        { num: 424,     runes: 2132010,     increase: 13516,       totalRunes: 251650210        },
+        { num: 425,     runes: 2145582,     increase: 13572,       totalRunes: 253795792        },
+        { num: 426,     runes: 2159212,     increase: 13630,       totalRunes: 255955004        },
+        { num: 427,     runes: 2172900,     increase: 13688,       totalRunes: 258127904        },
+        { num: 428,     runes: 2186644,     increase: 13744,       totalRunes: 260314548        },
+        { num: 429,     runes: 2200447,     increase: 13803,       totalRunes: 262514995        },
+        { num: 430,     runes: 2214307,     increase: 13860,       totalRunes: 264729302        },
+        { num: 431,     runes: 2228225,     increase: 13918,       totalRunes: 266957527        },
+        { num: 432,     runes: 2242201,     increase: 13976,       totalRunes: 269199728        },
+        { num: 433,     runes: 2256234,     increase: 14033,       totalRunes: 271455962        },
+        { num: 434,     runes: 2270327,     increase: 14093,       totalRunes: 273726289        },
+        { num: 435,     runes: 2284477,     increase: 14150,       totalRunes: 276010766        },
+        { num: 436,     runes: 2298686,     increase: 14209,       totalRunes: 278309452        },
+        { num: 437,     runes: 2312953,     increase: 14267,       totalRunes: 280622405        },
+        { num: 438,     runes: 2327280,     increase: 14327,       totalRunes: 282949685        },
+        { num: 439,     runes: 2341665,     increase: 14385,       totalRunes: 285291350        },
+        { num: 440,     runes: 2356109,     increase: 14444,       totalRunes: 287647459        },
+        { num: 441,     runes: 2370611,     increase: 14502,       totalRunes: 290018070        },
+        { num: 442,     runes: 2385174,     increase: 14563,       totalRunes: 292403244        },
+        { num: 443,     runes: 2399795,     increase: 14621,       totalRunes: 294803039        },
+        { num: 444,     runes: 2414476,     increase: 14681,       totalRunes: 297217515        },
+        { num: 445,     runes: 2429216,     increase: 14740,       totalRunes: 299646731        },
+        { num: 446,     runes: 2444016,     increase: 14800,       totalRunes: 302090747        },
+        { num: 447,     runes: 2458876,     increase: 14860,       totalRunes: 304549623        },
+        { num: 448,     runes: 2473795,     increase: 14919,       totalRunes: 307023418        },
+        { num: 449,     runes: 2488775,     increase: 14980,       totalRunes: 309512193        },
+        { num: 450,     runes: 2503814,     increase: 15039,       totalRunes: 312016007        },
+        { num: 451,     runes: 2518914,     increase: 15100,       totalRunes: 314534921        },
+        { num: 452,     runes: 2534075,     increase: 15161,       totalRunes: 317068996        },
+        { num: 453,     runes: 2549295,     increase: 15220,       totalRunes: 319618291        },
+        { num: 454,     runes: 2564577,     increase: 15282,       totalRunes: 322182868        },
+        { num: 455,     runes: 2579919,     increase: 15342,       totalRunes: 324762787        },
+        { num: 456,     runes: 2595322,     increase: 15403,       totalRunes: 327358109        },
+        { num: 457,     runes: 2610786,     increase: 15464,       totalRunes: 329968895        },
+        { num: 458,     runes: 2626310,     increase: 15524,       totalRunes: 332595205        },
+        { num: 459,     runes: 2641897,     increase: 15587,       totalRunes: 335237102        },
+        { num: 460,     runes: 2657544,     increase: 15647,       totalRunes: 337894646        },
+        { num: 461,     runes: 2673253,     increase: 15709,       totalRunes: 340567899        },
+        { num: 462,     runes: 2689023,     increase: 15770,       totalRunes: 343256922        },
+        { num: 463,     runes: 2704856,     increase: 15833,       totalRunes: 345961778        },
+        { num: 464,     runes: 2720750,     increase: 15894,       totalRunes: 348682528        },
+        { num: 465,     runes: 2736706,     increase: 15956,       totalRunes: 351419234        },
+        { num: 466,     runes: 2752723,     increase: 16017,       totalRunes: 354171957        },
+        { num: 467,     runes: 2768804,     increase: 16081,       totalRunes: 356940761        },
+        { num: 468,     runes: 2784946,     increase: 16142,       totalRunes: 359725707        },
+        { num: 469,     runes: 2801151,     increase: 16205,       totalRunes: 362526858        },
+        { num: 470,     runes: 2817418,     increase: 16267,       totalRunes: 365344276        },
+        { num: 471,     runes: 2833748,     increase: 16330,       totalRunes: 368178024        },
+        { num: 472,     runes: 2850141,     increase: 16393,       totalRunes: 371028165        },
+        { num: 473,     runes: 2866596,     increase: 16455,       totalRunes: 373894761        },
+        { num: 474,     runes: 2883115,     increase: 16519,       totalRunes: 376777876        },
+        { num: 475,     runes: 2899696,     increase: 16581,       totalRunes: 379677572        },
+        { num: 476,     runes: 2916341,     increase: 16645,       totalRunes: 382593913        },
+        { num: 477,     runes: 2933050,     increase: 16709,       totalRunes: 385526963        },
+        { num: 478,     runes: 2949821,     increase: 16771,       totalRunes: 388476784        },
+        { num: 479,     runes: 2966657,     increase: 16836,       totalRunes: 391443441        },
+        { num: 480,     runes: 2983556,     increase: 16899,       totalRunes: 394426997        },
+        { num: 481,     runes: 3000519,     increase: 16963,       totalRunes: 397427516        },
+        { num: 482,     runes: 3017546,     increase: 17027,       totalRunes: 400445062        },
+        { num: 483,     runes: 3034636,     increase: 17090,       totalRunes: 403479698        },
+        { num: 484,     runes: 3051792,     increase: 17156,       totalRunes: 406531490        },
+        { num: 485,     runes: 3069011,     increase: 17219,       totalRunes: 409600501        },
+        { num: 486,     runes: 3086295,     increase: 17284,       totalRunes: 412686796        },
+        { num: 487,     runes: 3103643,     increase: 17348,       totalRunes: 415790439        },
+        { num: 488,     runes: 3121057,     increase: 17414,       totalRunes: 418911496        },
+        { num: 489,     runes: 3138535,     increase: 17478,       totalRunes: 422050031        },
+        { num: 490,     runes: 3156078,     increase: 17543,       totalRunes: 425206109        },
+        { num: 491,     runes: 3173685,     increase: 17607,       totalRunes: 428379794        },
+        { num: 492,     runes: 3191359,     increase: 17674,       totalRunes: 431571153        },
+        { num: 493,     runes: 3209097,     increase: 17738,       totalRunes: 434780250        },
+        { num: 494,     runes: 3226901,     increase: 17804,       totalRunes: 438007151        },
+        { num: 495,     runes: 3244770,     increase: 17869,       totalRunes: 441251921        },
+        { num: 496,     runes: 3262705,     increase: 17935,       totalRunes: 444514626        },
+        { num: 497,     runes: 3280705,     increase: 18000,       totalRunes: 447795331        },
+        { num: 498,     runes: 3298772,     increase: 18067,       totalRunes: 451094103        },
+        { num: 499,     runes: 3316905,     increase: 18133,       totalRunes: 454411008        },
+        { num: 500,     runes: 3335103,     increase: 18198,       totalRunes: 457746111        }
     ]
+};  
 
 // Test global variable to hold total runes in inventory
 
-let userTotalRunes = {};
+let inventoryTotalRunes = 0;
+let userTotalRunes = 0;
 
 // Get information described in 'runes'
 
 function calculateRuneArray() {
     let myRuneArray = []
 
-    for (let i = 0; i < runes.length; i++) {
-        runeValue = runes[i].value;
-        runeName = runes[i].inputId;
+    for (let i = 0; i < data.runes.length; i++) {
+        runeValue = data.runes[i].value;
+        runeName = data.runes[i].inputId;
         runeAmount = document.getElementById(runeName).value;
-        runeEl = runes[i].smallId;
+        runeEl = data.runes[i].smallId;
 
         const runeInformation = {
             newRuneValue: runeValue,
@@ -60,25 +566,57 @@ function totalRuneAmount() {
         sum += totalz;
         document.getElementById(runeInformation.newRuneEl).textContent = myTotal;
     }
-    userTotalRunes = sum;
-    canUserLevel();
+    inventoryTotalRunes = sum;
+    
+    const heldRunes = parseInt(document.getElementById('held-runes').value);
+    userTotalRunes = inventoryTotalRunes + heldRunes;
+
+    // canUserLevel();
+    updateNumLevels();
 }
 
-function canUserLevel() {
-    let userNeededRunes = parseInt(document.getElementById("needed-runes").value);
-    let userHeldRunes = parseInt(document.getElementById("held-runes").value);
+// Returns object containing max num level-ups, leftover rune amount, and total runes needed for the next level
+// { numLevels: number, runesLeft: number, nextLevelTotal: number }
 
-    let resultColor = document.getElementById("level-y-n").style;
-    
-    let userOverallRuneInventory = userTotalRunes + userHeldRunes;
+function getMaxLevelInfo(currentLevel, numRunes) {
+    let info = { numLevels: 0, runesLeft: numRunes, runesNeeded: 0 };
+    if (currentLevel < 1 || currentLevel > 500)
+        return info;
 
-    document.getElementById("totalRunes").textContent = userOverallRuneInventory;
+    const currentLevelIndex = data.levels.findIndex(level => level.num === currentLevel);
+    const levelsToCheck = data.levels.slice(currentLevelIndex); // the levels array starting from the current level
 
-    if (userNeededRunes <= userOverallRuneInventory) {
-        document.getElementById("level-y-n").textContent = "YES";
+    let numLevels = 0;
+    let nextLevelRuneAmt = levelsToCheck[numLevels].runes;
+    let runesAfterMax = numRunes;
+    while (runesAfterMax >= nextLevelRuneAmt) {
+        runesAfterMax -= nextLevelRuneAmt;
+        numLevels++;
+        nextLevelRuneAmt = levelsToCheck[numLevels].runes;
+    }
+
+    info.numLevels = numLevels;
+    info.runesLeft = runesAfterMax;
+    info.runesNeeded = levelsToCheck[numLevels].runes;
+
+    return info;
+}
+
+function updateNumLevels() {
+    const currentLevel = parseInt(document.getElementById("current-level").value);
+    const levelInfo = getMaxLevelInfo(currentLevel, userTotalRunes);
+
+    const maxLevel = currentLevel + levelInfo.numLevels;
+    document.getElementById("max-level").textContent = maxLevel;
+    document.getElementById("runes-after-max").textContent = levelInfo.runesLeft;
+
+    const neededForNextLevel = levelInfo.runesNeeded - levelInfo.runesLeft;
+    document.getElementById("needed-after-max").textContent = neededForNextLevel;
+
+    const resultColor = document.getElementById("max-level").style;
+    if (levelInfo.numLevels > 0) {
         resultColor.color = "#009879";
     } else {
-        document.getElementById("level-y-n").textContent = "NO";
         resultColor.color = "red";
     }
 }
@@ -88,11 +626,9 @@ function getRuneIconUrl(inputId) {
         return "./png/rune.png";
 
     let url = "";
-    for (const rune of runes) {
-        console.log(`${rune.inputId} === ${inputId}`);
+    for (const rune of data.runes) {
         if (rune.inputId === inputId) {
             url = `./png/${rune.iconName}.png`
-            console.log(`returning ${url}`)
             break;
         }
     }
@@ -100,13 +636,13 @@ function getRuneIconUrl(inputId) {
 }
 
 function loadIcons() {
-    console.log('loading icons');
-    let runeIconElement = document.getElementById("rune-icon");
-    runeIconElement.src = getRuneIconUrl(runeIconElement.id);
-    for (const rune of runes) {
+    let runeIconElements = Array.from(document.getElementsByClassName("rune-icon"))
+    for (let element of runeIconElements)
+        element.src = getRuneIconUrl("rune-icon");
+
+    for (const rune of data.runes) {
         const url = getRuneIconUrl(rune.inputId);
         if (url !== "") {
-            console.log(`loading ${url}`)
             const row = document.getElementById(`${rune.inputId}-row`);
             let elements = row.getElementsByClassName("icon");
             if (elements[0])
